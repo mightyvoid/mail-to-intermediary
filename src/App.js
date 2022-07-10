@@ -4,9 +4,9 @@ import MailToIntermediary from "./MailToIntermediary";
 
 function App() {
   return (
-    <div className="App">
+    
       <MailToIntermediary /> 
-    </div>
+   
   );
 }
 

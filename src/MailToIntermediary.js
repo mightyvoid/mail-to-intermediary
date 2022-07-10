@@ -21,8 +21,7 @@ function MailToIntermediary() {
     SetEditorHtml(value);
   };
   const editorRef = useRef();
-  const [outputText,setOutputText] = useState();
-
+  const [outputText, setOutputText] = useState();
 
   const buttonDefinition = () => {
     console.log("Editor Content in HTML \n", editorHtml);
@@ -31,29 +30,31 @@ function MailToIntermediary() {
   };
 
   return (
-    <>
-      <Grid container>
-        <Paper>
+    <><Paper>
+      <Grid container >
         
-          
+          <Grid item xs={1}>
+            <Typography>Mail Body</Typography>
+          </Grid>
 
-            <Grid item xs={6}>
-              <Editor
-                editorState={editorState}
-                toolbarClassName="toolbarClassName"
-                wrapperClassName="wrapperClassName"
-                editorClassName="editorClassName"
-                onEditorStateChange={onEditorStateChange}
-                ref={editorRef}
-              />
-            </Grid>
-    
+          <Grid item xs={11}>
           
-        </Paper>
+            <Editor
+              editorState={editorState}
+              toolbarClassName="toolbarClassName"
+              wrapperClassName="wrapperClassName"
+              editorClassName="editorClassName"
+              onEditorStateChange={onEditorStateChange}
+              ref={editorRef}
+            />
+          </Grid>
+        
+  
       </Grid>
+      </Paper>
       <button onClick={buttonDefinition}>Log the editor body</button>
-      {outputText &&  <p>{outputText}</p>
-          }
+      {outputText && <p>{outputText}</p>}
+      
     </>
   );
 }
