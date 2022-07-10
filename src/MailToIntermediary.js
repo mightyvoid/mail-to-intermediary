@@ -30,15 +30,14 @@ function MailToIntermediary() {
   };
 
   return (
-    <><Paper>
-      <Grid container >
-        
+    <>
+      <Paper>
+        <Grid container spacing={2}>
           <Grid item xs={1}>
             <Typography>Mail Body</Typography>
           </Grid>
 
           <Grid item xs={11}>
-          
             <Editor
               editorState={editorState}
               toolbarClassName="toolbarClassName"
@@ -48,13 +47,10 @@ function MailToIntermediary() {
               ref={editorRef}
             />
           </Grid>
-        
-  
-      </Grid>
+        </Grid>
       </Paper>
-      <button onClick={buttonDefinition}>Log the editor body</button>
+      <button onClick={buttonDefinition}>Print editor</button>
       {outputText && <p>{outputText}</p>}
-      
     </>
   );
 }
